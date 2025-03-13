@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Saleh Mobeen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/favicon.avif" type="image/x-icon">
+
+    <meta name="description" content="Get in touch with me for collaborations, projects, or any inquiries.">
+    <meta name="keywords" content="contact, email, reach out, work with me, inquiries">
+    <meta name="author" content="Muhammad Saleh Mobeen Qureshi">
+</head>
+
+<body>
+    <nav>
+        <label for="hb-menu"><svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"
+                focusable="false"
+                style="pointer-events: none; display: block; width: 30px; height: 100%; fill: var(--tx);"
+                viewBox="0 0 20 20" class="cr-iconset-svg-icon_" role="none">
+                <g>
+                    <path d="M2 4h16v2H2zM2 9h16v2H2zM2 14h16v2H2z"></path>
+                </g>
+            </svg></label>
+        <input type="checkbox" class="hb-menu" id="hb-menu" checked>
+        <div>
+            <h1>Saleh mobeen</h1>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="coding journey.html">Coding journey</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html" class="current">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="cont-sec">
+        <div class="cont-msg">
+            <form novalidate>
+                <div class="cont-inp">
+                    <label for="name">Full Name</label>
+                    <div class="inp-wrap">
+                        <input type="text" id="name" name="name" required minlength="3">
+                    </div>
+                    <span class="error">Error</span>
+                </div>
+                <div class="cont-inp">
+                    <label for="subject">Subject</label>
+                    <div class="inp-wrap">
+                        <input type="text" id="subject" name="subject" list="sub-opt" required minlength="3">
+                    </div>
+                    <span class="error">Error</span>
+
+                </div>
+                <div class="cont-inp">
+                    <label for="email">Email</label>
+                    <div class="inp-wrap">
+                        <input type="email" id="email" name="email" required>
+
+                    </div>
+                    <span class="error">Error</span>
+
+                </div>
+                <div class="cont-inp">
+                    <label for="message">Message</label>
+                    <div class="inp-wrap">
+                        <textarea id="message" name="message" required minlength="10"></textarea>
+
+                    </div>
+                    <span class="error">Error</span>
+
+                </div>
+
+                <button type="submit">Send</button>
+            </form>
+            <datalist id="sub-opt">
+                <option value="FeedBack & Suggestions"></option>
+                <option value="General Inquiry"></option>
+                <option value="Bug Report / Issue"></option>
+                <option value="Website Support"></option>
+            </datalist>
+        </div>
+    </section>
+
+    <div class="mail-sent">
+        <div>
+            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+                type="module"></script>
+            <dotlottie-player src="https://lottie.host/612b929d-7e96-4cb8-870c-1aba72ba93be/bxoPZsXxOp.lottie"
+                background="transparent" speed="1" style="width: 300px; height: 300px"></dotlottie-player>
+            <h2>Message Sent</h2>
+            <p>Thank you for contacting</p>
+            <button>OK</button>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+
+            <strong>Copy right 2024 (©) By Saleh Mobeen. All Rights Reserved.</strong>
+        </div>
+        <div>
+            <p>Muhammad Saleh Mobeen Qureshi</p>
+            <p>smturbo23@gmail.com</p>
+
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="./contact.js"></script>
+</body>
+
+</html>

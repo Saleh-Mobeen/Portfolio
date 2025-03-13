@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /*.js$
+Disallow: /*.json$
+Disallow: /email template/
+Disallow: /assets/
+Allow: /
+
+Sitemap: https://saleh-mobeen.github.io/Portfolio/sitemap.xml
+
