@@ -61,10 +61,58 @@ body {
 
 .glitch {
     display: inline-block;
+    opacity: 0;
 }
 
 .emph {
     color: var(--accent-hov);
+}
+
+.preloader {
+    font-family: 'Onder';
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    background-color: var(--bg);
+    z-index: 9999;
+    text-align: center;
+    font-size: 1vw;
+    transition: transform 1s ease;
+}
+
+.preloader.loaded:has(h1.done) {
+    animation: load 1s 0.8s ease forwards;
+}
+
+.preloader h1 {
+    position: relative;
+}
+
+.preloader h1::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #c94a1a;
+    transition: width 0.5s 0.2s ease;
+}
+
+.preloader h1.done::after {
+    width: 100%;
+}
+
+@keyframes load {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100%);
+    }
 }
 
 /*---NAV---*/

@@ -100,6 +100,47 @@ async function autoReveal() {
 
 setInterval(autoReveal, 8000)
 
+// LOAD
+const loader = document.querySelector('.preloader')
+
+const allImages = [
+    'assets/hero-bg.png',
+    'assets/theme-hero-bg.png',
+    'assets/avatar.webp',
+    'assets/theme-avatar.webp',
+]
+
+let loaded = 0;
+
+allImages.forEach(src => {
+    const img = new Image();
+    img.onload = () => {
+        loaded++;
+        if (loaded >= allImages.length) closeloader()
+    };
+    img.onerror = () => {
+        loaded++;
+        if (loaded >= allImages.length) closeloader()
+    };
+    img.src = src;
+});
+
+
+async function closeloader() {
+    loader.classList.add('loaded');
+    if (!loader.firstElementChild.classList.contains('done')) {
+        await wait(3000)
+    }
+    glitchText(document.querySelector('.hero .glitch'))
+}
+
+
+
+
+
+
+
+
 const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&!?';
 
 async function glitchText(ele) {
@@ -130,6 +171,7 @@ async function glitchText(ele) {
         index++
     }
 
+    ele.classList.add('done')
     function render() { text = text + letter; ele.textContent = text }
 
 }
@@ -139,9 +181,7 @@ async function glitchText(ele) {
 
 
 
-document.querySelectorAll('.glitch').forEach(gl => {
-    glitchText(gl)
-})
+glitchText(loader.firstElementChild)
 
 
 const fadeup = document.querySelectorAll('.hero-heading h1, .hero-heading p, .avatar')
