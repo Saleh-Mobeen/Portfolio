@@ -80,8 +80,6 @@ body {
     text-align: center;
     font-size: 1vw;
     transition: transform 1s ease;
-
-    display: none;
 }
 
 .preloader.loaded:has(h1.done) {
