@@ -80,6 +80,8 @@ body {
     text-align: center;
     font-size: 1vw;
     transition: transform 1s ease;
+
+    display: none;
 }
 
 .preloader.loaded:has(h1.done) {
@@ -480,9 +482,13 @@ nav ul li a:hover::after {
 
 
 .proj-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--border);
     border-radius: 1em;
     overflow: hidden;
+    height: 350px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
     background-color: var(--surface);
 }
@@ -490,10 +496,12 @@ nav ul li a:hover::after {
 .proj-img img {
     display: block;
     width: 100%;
-    object-fit: cover;
+    max-height: 100%;
 }
 
 .proj-desc {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     border: 1px solid var(--border);
     border-radius: 1em;
@@ -507,7 +515,7 @@ nav ul li a:hover::after {
     font-weight: 500;
     color: var(--text-3);
     font-size: 1em;
-    /* float: right; */
+    float: right;
 }
 
 .proj-desc p {
@@ -535,6 +543,29 @@ nav ul li a:hover::after {
     border-radius: 10000em;
     color: var(--text-2);
 }
+
+.proj a {
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text-2);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 12px;
+    text-align: center;
+
+    transition:
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.proj a:hover {
+    background: var(--elevated);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
 
 /*---SKILLS---*/
 
